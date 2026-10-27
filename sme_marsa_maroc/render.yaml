@@ -1,0 +1,14 @@
+# Déploiement Render (offre gratuite) — lu automatiquement depuis le dépôt GitHub
+services:
+  - type: web
+    name: sme-marsa-maroc
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: TZ
+        value: Africa/Casablanca

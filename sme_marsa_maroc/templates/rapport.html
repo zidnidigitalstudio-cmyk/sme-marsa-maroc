@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revue énergétique {{ mois }} — SME {{ client.societe }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='rapport.css') }}">
+</head>
+<body class="rep-body" data-mois="{{ mois }}" data-user="{{ user.fullname }}" data-genere="{{ genere }}">
+<div class="rep-tools no-print">
+  <a class="btn" href="/#/rapports">← Retour</a>
+  <span class="small muted">Utilisez « Imprimer » puis « Enregistrer au format PDF » pour obtenir le document.</span>
+  <button class="btn primary" id="printBtn">Imprimer / PDF</button>
+</div>
+<article class="sheet" id="sheet"><div class="empty">Préparation du rapport…</div></article>
+<script src="{{ url_for('static', filename='vendor/chart.umd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='rapport.js') }}"></script>
+</body>
+</html>

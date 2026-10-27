@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SME — Connexion</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-body">
+<main class="login-card">
+  <div class="login-brand">
+    <div class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="40" height="40"><path d="M22 3 9 23h9l-2 14 15-21h-9l3-13z" fill="currentColor"/></svg>
+    </div>
+    <div>
+      <div class="login-title">SME</div>
+      <div class="login-sub">Système de Monitoring Énergétique</div>
+    </div>
+  </div>
+  <p class="login-client">{{ client.societe }} — {{ client.direction }}<br>Marché {{ client.marche }} · {{ client.norme }}</p>
+  {% if err %}<div class="login-err" role="alert">{{ err }}</div>{% endif %}
+  <form method="post" autocomplete="on">
+    <label>Identifiant<input name="username" autocomplete="username" required autofocus></label>
+    <label>Mot de passe<input name="password" type="password" autocomplete="current-password" required></label>
+    <button class="btn primary wide" type="submit">Se connecter</button>
+  </form>
+  <form method="post" action="{{ url_for('login_guest') }}">
+    <button class="btn ghost wide" type="submit">Accès démonstration (lecture seule)</button>
+  </form>
+  <p class="login-foot">Prototype académique — données simulées. Accès journalisés.</p>
+</main>
+</body>
+</html>
