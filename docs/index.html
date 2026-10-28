@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SME — Marsa Maroc · Port d'Agadir</title>
+<meta name="description" content="Système de Monitoring Énergétique (SME) ISO 50001:2018 — Marsa Maroc, Port d'Agadir, marché 12/DEPA/2026 — démonstrateur académique.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23e88a12'/%3E%3Cpath d='M22 6 11 23h8l-2 12 12-18h-8l3-11z' fill='%2310131a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side">
+    <div class="brand">
+      <div class="logo-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M22 3 9 23h9l-2 14 15-21h-9l3-13z" fill="currentColor"/></svg></div>
+      <div><div class="brand-t">SME</div><div class="brand-s">Marsa Maroc · DEPA<br>Port d'Agadir</div></div>
+    </div>
+    <nav class="nav" id="nav" aria-label="Navigation principale"></nav>
+    <div class="side-foot">Marché 12/DEPA/2026<br>ISO 50001:2018 · v1.1</div>
+  </aside>
+  <div>
+    <header class="top">
+      <button class="iconbtn menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <div>
+        <h1 id="viewTitle">Tableau de bord</h1>
+        <div class="crumb hide-m" id="viewSub"></div>
+      </div>
+      <div class="sp"></div>
+      <span class="pill hide-m" id="livePill" title="État du moteur d'acquisition"><span class="dot" id="liveDot"></span><span id="liveTxt">Démarrage…</span></span>
+      <span class="pill mono hide-m" id="clock" title="Heure locale (Africa/Casablanca)">--:--:--</span>
+      <select id="lang" class="hide-m" aria-label="Langue"><option value="fr">FR</option><option value="en">EN</option></select>
+      <button class="iconbtn" id="themeBtn" title="Thème clair / sombre" aria-label="Changer de thème"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 3a9 9 0 1 0 0 18V3z"/><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      <label class="role-pick" title="Profil (habilitations)"><span class="hide-m muted small">Profil</span><select id="roleSel" aria-label="Profil utilisateur"></select></label>
+    </header>
+    <main class="content" id="view" tabindex="-1"></main>
+  </div>
+</div>
+<div id="overlay"></div>
+<div class="toast-zone" id="toasts" aria-live="polite"></div>
+<script src="vendor/chart.umd.min.js"></script>
+<script src="backend.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
